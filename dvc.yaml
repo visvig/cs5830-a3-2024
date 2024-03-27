@@ -13,3 +13,10 @@ stages:
     - src/prepare.py
     outs:
     - outputs/processed
+  process_data:
+    cmd: python src/process.py
+    deps:
+    - data/raw
+    - src/process.py
+    outs:
+    - outputs_process/processed
