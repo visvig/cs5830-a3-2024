@@ -1,0 +1,15 @@
+stages:
+  download_data:
+    cmd: python src/download.py
+    deps:
+    - params/params.yaml
+    - src/download.py
+    outs:
+    - data/raw
+  prepare_data:
+    cmd: python src/prepare.py
+    deps:
+    - data/raw
+    - src/prepare.py
+    outs:
+    - outputs/processed
