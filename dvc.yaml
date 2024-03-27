@@ -20,3 +20,11 @@ stages:
     - src/process.py
     outs:
     - outputs_process/processed
+  evaluate_data:
+    cmd: python src/evaluate.py
+    deps:
+    - outputs/processed
+    - outputs_process/processed
+    - src/evaluate.py
+    outs:
+    - results/evaluation_results.txt
