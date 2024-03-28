@@ -1,10 +1,15 @@
 import pandas as pd
 import os
 
+
 # Define the input and output file paths
 base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))  # Base directory for the cs5830 folder
 input_folder = os.path.join(base_dir, 'data')  # Path to input folder
 output_folder = os.path.join(base_dir, 'outputs_process')  # Path to output folder
+
+if not os.path.exists(output_folder):
+    os.makedirs(output_folder, exist_ok=True)
+
 
 # Get a list of all CSV files in the input folder
 csv_files = [file for file in os.listdir(input_folder) if file.endswith('.csv')]
