@@ -5,7 +5,7 @@ stages:
     - params/params.yaml
     - src/download.py
     outs:
-    - data/raw
+    - data
   prepare_data:
     cmd: python src/prepare.py
     deps:
