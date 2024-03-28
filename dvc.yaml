@@ -9,22 +9,22 @@ stages:
   prepare_data:
     cmd: python src/prepare.py
     deps:
-    - data/raw
+    - data
     - src/prepare.py
     outs:
     - outputs/processed
   process_data:
     cmd: python src/process.py
     deps:
-    - data/raw
+    - data
     - src/process.py
     outs:
     - outputs_process/processed
   evaluate_data:
     cmd: python src/evaluate.py
     deps:
-    - outputs/processed
-    - outputs_process/processed
+    - outputs
+    - outputs_process
     - src/evaluate.py
     outs:
     - results/evaluation_results.txt
