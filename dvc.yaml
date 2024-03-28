@@ -12,14 +12,14 @@ stages:
     - data
     - src/prepare.py
     outs:
-    - outputs/processed
+    - outputs
   process_data:
     cmd: python src/process.py
     deps:
     - data
     - src/process.py
     outs:
-    - outputs_process/processed
+    - outputs_process
   evaluate_data:
     cmd: python src/evaluate.py
     deps:
