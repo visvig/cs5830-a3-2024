@@ -5,8 +5,8 @@ stages:
     deps:
     - path: params/params.yaml
       hash: md5
-      md5: 70135d9d1d8aca95ae0c55988695621e
-      size: 20
+      md5: 46f2d82d185061db08fe83cf5f4b9abd
+      size: 21
     - path: src/download.py
       hash: md5
       md5: 04cd3309f9935c7bd269ed361cb9d466
@@ -14,17 +14,17 @@ stages:
     outs:
     - path: data
       hash: md5
-      md5: aacaf24c68d7c7a6241051992b48272a.dir
-      size: 200927796
-      nfiles: 6
+      md5: c5a3c3d48b4c244bca1b4b7b2dd5f6c3.dir
+      size: 353699597
+      nfiles: 10
   prepare_data:
     cmd: python src/prepare.py
     deps:
     - path: data
       hash: md5
-      md5: aacaf24c68d7c7a6241051992b48272a.dir
-      size: 200927796
-      nfiles: 6
+      md5: c5a3c3d48b4c244bca1b4b7b2dd5f6c3.dir
+      size: 353699597
+      nfiles: 10
     - path: src/prepare.py
       hash: md5
       md5: 3f76ab7e125cc6b715d5b866a080aef4
@@ -32,17 +32,17 @@ stages:
     outs:
     - path: outputs
       hash: md5
-      md5: 6209abd7cf1808b17c5c3aa036015bbd.dir
-      size: 14927167
-      nfiles: 6
+      md5: 0376dbd5deb3c279f12c1688124575a2.dir
+      size: 26375624
+      nfiles: 10
   process_data:
     cmd: python src/process.py
     deps:
     - path: data
       hash: md5
-      md5: aacaf24c68d7c7a6241051992b48272a.dir
-      size: 200927796
-      nfiles: 6
+      md5: c5a3c3d48b4c244bca1b4b7b2dd5f6c3.dir
+      size: 353699597
+      nfiles: 10
     - path: src/process.py
       hash: md5
       md5: cf28ca5b16cc5f6af04bd4f61f9160de
@@ -50,22 +50,22 @@ stages:
     outs:
     - path: outputs_process
       hash: md5
-      md5: 633517732d95bdf9a7ce62ae3c26d214.dir
-      size: 8293
-      nfiles: 6
+      md5: 581713227010da46d5a37935e70cac33.dir
+      size: 12701
+      nfiles: 10
   evaluate_data:
     cmd: python src/evaluate.py
     deps:
     - path: outputs
       hash: md5
-      md5: 6209abd7cf1808b17c5c3aa036015bbd.dir
-      size: 14927167
-      nfiles: 6
+      md5: 0376dbd5deb3c279f12c1688124575a2.dir
+      size: 26375624
+      nfiles: 10
     - path: outputs_process
       hash: md5
-      md5: 633517732d95bdf9a7ce62ae3c26d214.dir
-      size: 8293
-      nfiles: 6
+      md5: 581713227010da46d5a37935e70cac33.dir
+      size: 12701
+      nfiles: 10
     - path: src/evaluate.py
       hash: md5
       md5: 5c43a9c70b8b5bd7ba72cc6515a5646b
@@ -73,5 +73,5 @@ stages:
     outs:
     - path: results/evaluation_results.txt
       hash: md5
-      md5: 1cd6c4bd983c4c0608b0683450d01e37
-      size: 70
+      md5: cbe64ebb5d2d8360aa9e6f36aff7289e
+      size: 98
